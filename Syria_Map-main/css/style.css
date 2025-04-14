@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.map-container {
+    position: relative;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.map-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.province-info {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-top: 1rem;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.province-info.active {
+    display: block;
+}
+
+.province-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.province-info h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.province-info h4 {
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.province-info p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.province-info ul {
+    margin: 1rem 0;
+    padding-right: 1rem;
+}
+
+.province-info ul li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.province-info .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.province-info .error {
+    color: #e74c3c;
+    text-align: center;
+    padding: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .province-info {
+        padding: 1.5rem;
+    }
+    
+    .province-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .province-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .province-info h4 {
+        font-size: 1rem;
+    }
+}
